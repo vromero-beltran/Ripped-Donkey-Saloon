@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*---       HEADER START       --- */
+header {
+    background-color: #3e3e3e;
+    padding: 15;
+    margin: 0;
+    overflow-x: hidden;
+    text-align: center;
+    box-shadow: 0 0 3px #000;
+}
+
+.logo img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 3px solid #b60000;
+    box-shadow: 2px 2px 2px #000;
+    transition: 0.3s ease;
+    cursor: pointer;
+    background-color: #808080;
+}
+
+.logo h1 {
+    color: #b60000;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px 2px #000;
+    padding: 13px;
+    transition: .3s ease;
+    display: block;
+    height: 100%;
+}
+
+.navbar a:hover {
+    color: #b60000;
+}
+
+.navbar ul #contact a {
+    color: #b60000;
+    text-shadow: none;
+    font-size: 18px;
+    background-color: #808080;
+    border-radius: 30px;
+}
+
+.navbar ul #contact a:hover {
+    color: #252525;
+}
+
+/*---       HEADER END       --- */

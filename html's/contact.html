@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ripped Donkey Saloon</title>
+        <link rel="stylesheet" href="../assets/contact.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="./images/logo.png" alt="Ripped Donkey Saloon Logo">
+                <h1>Ripped Donkey Saloon</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../homepage.html">Home</a></li>
+                    <li><a href="#">Upcoming Events</a></li>
+                    <li><a href="#">Beer</a></li>
+                    <li><a href="#">About</a></li>
+                    <li id="contact"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-left">
+                            <h1 class="sub-title">Contact Us</h1>
+                            <p><i class="fa-solid fa-envelope"></i>info@rippeddonkeysaloon.com</p>
+                            <p><i class="fa-solid fa-mobile-screen"></i>555-123-4567</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact-right">
+                            <form name="submit-to-google-sheet">
+                                <input type="text" name="Name" placeholder="Your Name/Band Name" required>
+                                <input type="email" name="Email" placeholder="Your Email" required>
+                                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                                <button type="submit" class="btn btn2">Submit</button>
+                                
+                            </form>
+                            <span id="msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Copyright &copy; Ripped Donkey Saloon. Made with <i class="fa-solid fa-heart"></i> by Victor Romero-Beltran and Shawn Zrowka</p>
+                </div>
+            </div>
+        </main>
+        <!---------Script/Contact Me section------------->
+        <script>
+            const scriptURL = ''
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully!"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+    </body>
+</html>
