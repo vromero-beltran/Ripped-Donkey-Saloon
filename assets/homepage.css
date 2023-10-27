@@ -25,8 +25,8 @@ header {
 
 .logo img {
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
     border-radius: 50%;
     border: 3px solid var(--background);
@@ -37,7 +37,7 @@ header {
 
 .logo h1 {
     color: var(--text-color);
-    font-size: 35px;
+    font-size: 50px;
     font-weight: bold;
     text-shadow: 2px 2px 2px var(--box-show);
 }
