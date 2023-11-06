@@ -126,7 +126,7 @@ function initCalendar() {
     const nextDays = 7 - lastDay.getDay();
 
     // updates the top of the calender
-    day.innerHTML = months[month] + " " + year; 
+    date.innerHTML = months[month] + " " + year; 
 
     // adding days on DOM
     let days = " ";
@@ -198,6 +198,7 @@ dateInput.addEventListener("keyup", (e) => {
         dateInput.value += "/";
     }
     if(dateInput.value.length > 7) {
+        // don't allow more than 7 characters
         dateInput.value = dateInput.value.slice(0, 7);
     }
     // if we remove unit slash its not removing
@@ -208,10 +209,10 @@ dateInput.addEventListener("keyup", (e) => {
     }
 });
 
+gotoBtn.addEventListener("click", gotoDate);
 // function to go to entered date
-
 function gotoDate() {
-    const dateArr = dateInput = dateInput.value.slit("/");
+    const dateArr = dateInput.value.split("/");
     // some date validation
     if (dateArr.length === 2) {
         if (dateArr[0] > 0 && dateArr[0] < 13 && dateArr[1].length === 4) {

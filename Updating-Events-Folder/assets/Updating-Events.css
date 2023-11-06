@@ -1,0 +1,119 @@
+:root {
+    --main-color: #b60000;
+    --background: #5f5f5f;
+    --text-color: #fff;
+    --box-show: #000;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', 'sans-serif';
+    box-sizing: border-box;
+    background: var(--background);
+}
+
+.container {
+    position: relative;
+    width: 1200px;
+    min-height: 850px;
+    margin: 0 auto;
+    padding: 5px;
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.container .right {
+    position: relative;
+    width: 40%;
+    min-height: 100%;
+    padding: 20px 0;
+}
+.right .today-date {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    padding-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.today-date .event-day {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.today-date .event-date {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.events {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.events .event {
+    position: relative;
+    width: 95%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-left: 50px;
+    color: var(--text-color);
+    cursor: pointer;
+    background: linear-gradient(90deg , var(--box-show) , transparent);
+}
+
+.events .event:nth-child(even) {
+    background: transparent;
+}
+
+.events .event:hover {
+    background: linear-gradient(90deg , var(--main-color) , transparent);
+}
+
+.events .event .title {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.events .event .title .event-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.events .event .title i {
+    color: var(--main-color);
+}
+
+.events .event:hover .title i {
+    color: var(--box-show);
+}
+
+.events .event .event-time {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-left: 15px;
+    pointer-events: none;
+}
+
+
